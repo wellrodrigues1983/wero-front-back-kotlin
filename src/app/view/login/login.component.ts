@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
 
   configObject: any;
 
+  agora = new Date();
+  expiracao = new Date(this.agora);
+
   constructor(
     private authService: LoginService,
     private router: Router,
@@ -28,7 +31,8 @@ export class LoginComponent implements OnInit {
       this.authService.login(data)
         .subscribe({
           next: (response) => {
-              this.cookieService.set('User_Info', response.token)
+            this.expiracao.setMinutes(this.agora.getMinutes() + 480) //480 minutos(8 Horas) para expirar o cookie
+              this.cookieService.set('USER_INFO', response.token, this.expiracao)
               this.router.navigate(['home'])
               this.toast.success({detail:"SUCESSO",summary:'Login efetuado com sucesso!',duration:3000})
           },

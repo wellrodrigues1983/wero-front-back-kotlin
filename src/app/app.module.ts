@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgToastModule } from 'ng-angular-popup';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     BrowserAnimationsModule,
     NgToastModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
 
   ],
   providers: [BsModalService],
