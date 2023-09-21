@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<!-- <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="card">
@@ -26,4 +26,26 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="login-conteiner">
+  <mat-card class="login-conteiner">
+    <mat-card-title class="login-title">Login</mat-card-title>
+    <mat-card-content >
+      <form class="formulario" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Usuário</mat-label>
+          <input matInput formControlName="login" type="email" placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Senha</mat-label>
+          <input matInput formControlName="passwd" type="password" placeholder="Password">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
+

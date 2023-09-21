@@ -7,6 +7,10 @@ import { LoginService } from './login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LOGIN_ROUTES } from './login.routing';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -14,6 +18,11 @@ import { LOGIN_ROUTES } from './login.routing';
     FormsModule,
     ReactiveFormsModule,
     AlertModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule ,
+    MatCardModule,
+
     RouterModule.forChild(LOGIN_ROUTES)
   ],
   declarations: [LoginComponent, AuthenticateComponent],
