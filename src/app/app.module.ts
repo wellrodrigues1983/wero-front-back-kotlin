@@ -13,11 +13,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgToastModule } from 'ng-angular-popup';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { AdministracaoModule } from './view/administracao/administracao.module';
+import { RouterModule } from '@angular/router';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,10 +41,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     NgToastModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    AdministracaoModule,
+    RouterModule,
+    MatCardModule
+
 
   ],
-  providers: [BsModalService],
+  providers: [BsModalService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

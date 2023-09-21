@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 95%;
+  margin: 3%;
+  margin-bottom: 10px; /* Ajuste a margem conforme necessário */
+  padding: 20px; /* Adicione algum preenchimento interno conforme necessário */
+  max-height: 100vh; /* Altura mínima para cobrir toda a altura da tela */
+  box-sizing: border-box;
+  border: 0.5px white #ccc; /* Borda de 1 pixel, cor cinza (#ccc) */
+  background: linear-gradient(rgba(226, 216, 216, 0.1), rgba(209, 202, 202, 0.5)); /* Gradiente de sombra */
+
+}
+

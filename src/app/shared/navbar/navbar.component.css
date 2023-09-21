@@ -1,0 +1,6 @@
+.btnLogout{
+  position: absolute; /* ou position: fixed, dependendo do seu requisito */
+  top: 0; /* Pode ajustar conforme necessário */
+  right: 0;
+  padding: 10px; /* Espaçamento interno da div */
+}

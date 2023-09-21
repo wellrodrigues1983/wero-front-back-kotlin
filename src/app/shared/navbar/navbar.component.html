@@ -1,0 +1,52 @@
+<div>
+  <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="adm_menu">
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span>Administração</span>
+      </button>
+      <mat-menu #adm_menu="matMenu">
+        <button mat-menu-item [routerLink]="['/usuario-cadastro']">
+          <mat-icon>person_add</mat-icon>
+          <span>Cadastrar Usuário</span>
+        </button>
+
+        <button mat-menu-item [routerLink]="['/usuario-editar']">
+          <mat-icon>person_edit</mat-icon>
+          <span>Editar Usuário</span>
+        </button>
+
+        <button mat-menu-item [routerLink]="['/usuario-listar']">
+          <mat-icon>person_search</mat-icon>
+          <span>Listar Usuários</span>
+        </button>
+      </mat-menu>
+
+
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+    <span>Wero</span>
+
+    <div class="btnLogout">
+      <button mat-icon-button [matMenuTriggerFor]="logout" aria-label="Logout">
+        <mat-icon>logout</mat-icon>
+      </button>
+      <mat-menu #logout="matMenu">
+        <button mat-menu-item (click)="logoff()">
+          <mat-icon>person_off</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</div>
