@@ -1,0 +1,33 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Cadastro de Usuário</mat-card-title>
+    <mat-card-content class="matCardContent">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Login</mat-label>
+          <input matInput formControlName="login" placeholder="Login" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="passwd" type="text" placeholder="Senha" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Tipo de Usuário</mat-label>
+          <select matNativeControl required formControlName="roles">
+            <option value="USER">Usuário</option>
+            <option value="ADMIN">Administrador</option>
+            <option value="SUPERVISOR">Supervisor</option>
+            <option value="COLABORADOR">Colaborador</option>
+          </select>
+
+        </mat-form-field>
+
+
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

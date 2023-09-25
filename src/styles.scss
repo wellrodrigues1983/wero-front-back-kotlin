@@ -1,11 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
-//@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap.css';
 
 /* Importing Bootstrap SCSS file. */
-//@import "./node_modules/bootstrap/scss/bootstrap";
+@import "./node_modules/bootstrap/scss/bootstrap";
 
 /* Importing Datepicker SCSS file. */
-//@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+@import '@angular/material/theming';
+
+@include mat-core();
+
+$custom-app-primary: mat-palette($mat-indigo, A200);
+$custom-app-secondary: mat-palette($mat-indigo, A200, A400, A700);
+$custom-app-warning: mat-palette($mat-red);
+
+
+$custom-theme: mat-light-theme($custom-app-primary, $custom-app-secondary, $custom-app-warning );
+
+@include angular-material-theme($custom-theme);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-width {
+  width: 50%;
+}
+
+.matCardContent button{
+  margin-left: 50px;
+}
+
+
+.container-outlet{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 20px;
+  color: black;
+
+}
+
+mat-card-title{
+  padding: 10px;
+  background-color: #536DFE;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.matCardContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 20px;
+
+}
+
+.loading-spinner{
+  padding: 25px;
+  /* background: rgba(0,0,0,0.15); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

@@ -13,6 +13,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'administracao/gerenciar-usuarios',
+    loadChildren: () => import('./view/administracao/administracao.module').then((m) =>
+ m.AdministracaoModule),
+    canActivate: [AuthGuard]
+  },
+ /*  {
     path: 'administracao/usuario-cadastro',
     loadChildren: () => import('./view/administracao/administracao.module').then((m) =>
  m.AdministracaoModule),
@@ -29,7 +35,7 @@ const routes: Routes = [
     loadChildren: () => import('./view/administracao/administracao.module').then((m) =>
  m.AdministracaoModule),
     canActivate: [AuthGuard]
-  },
+  }, */
 
 ];
 

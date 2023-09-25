@@ -25,5 +25,9 @@ export class LoginService {
     return JWT_TOKEN ? true : false
   }
 
+  getToken(): string {
+    return this.cookie.get('USER_INFO')
+  }
+
 
 }

@@ -1,15 +1,14 @@
 import { ErrorPageComponent } from './../../shared/error-page/error-page.component';
 import { Routes, RouterModule } from '@angular/router';
-import { AdministracaoComponent } from './administracao.component';
-import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
-import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
-import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.component';
+import { GerenciarUsuariosComponent } from './gerenciar-usuarios/gerenciar-usuarios.component';
+import { CadastrarUsuarioComponent } from './gerenciar-usuarios/cadastrar-usuario/cadastrar-usuario.component';
+
 
 const routes: Routes = [
-  { path: '', component: ErrorPageComponent },
-  { path: 'usuario-cadastro', component: CadastrarUsuarioComponent },
-  { path: 'usuario-editar', component: EditarUsuarioComponent },
-  { path: 'usuario-listar', component: ListarUsuarioComponent },
+  { path: '', redirectTo: 'gerenciar-usuarios', pathMatch: 'full'},
+  { path: 'gerenciar-usuarios', component: GerenciarUsuariosComponent },
+
+
 ];
 
 export const AdministracaoRoutes = RouterModule.forChild(routes);

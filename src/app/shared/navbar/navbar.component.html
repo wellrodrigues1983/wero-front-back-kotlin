@@ -9,20 +9,20 @@
         <span>Administração</span>
       </button>
       <mat-menu #adm_menu="matMenu">
-        <button mat-menu-item [routerLink]="['/usuario-cadastro']">
-          <mat-icon>person_add</mat-icon>
-          <span>Cadastrar Usuário</span>
+        <button mat-menu-item [routerLink]="['administracao/gerenciar-usuarios']">
+          <mat-icon>manage_accounts</mat-icon>
+          <span>Gerenciar Usuários</span>
         </button>
 
-        <button mat-menu-item [routerLink]="['/usuario-editar']">
+        <!-- <button mat-menu-item [routerLink]="['/usuario-editar']">
           <mat-icon>person_edit</mat-icon>
           <span>Editar Usuário</span>
-        </button>
+        </button> -->
 
-        <button mat-menu-item [routerLink]="['/usuario-listar']">
+        <!-- <button mat-menu-item [routerLink]="['/usuario-listar']">
           <mat-icon>person_search</mat-icon>
           <span>Listar Usuários</span>
-        </button>
+        </button> -->
       </mat-menu>
 
 

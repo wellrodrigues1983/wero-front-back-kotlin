@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
               this.toast.success({detail:"SUCESSO",summary:'Login efetuado com sucesso!',duration:3000})
           },
           error: (err) => {
+            this.cookieService.delete('USER_INFO')
             this.configObject = this.toast.error({detail:"ERRO",summary:'Erro ao efetuar o login',duration:3000})
           }
         })
