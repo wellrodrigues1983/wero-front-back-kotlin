@@ -1,4 +1,4 @@
-.login-title{
+/* .login-title{
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
@@ -19,4 +19,20 @@
 .formulario{
   display: flex;
   flex-direction: column;
+} */
+
+.login-conteiner{
+  width: 50%;
+  display: flex;
+  margin-left: 25%;
+  margin-right: 25%;
 }
+
+.formulario{
+  padding-top: 30px;
+  display: flex;
+  align-items: flex-center;
+  flex-direction: column;
+}
+
+

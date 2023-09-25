@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     private toast: NgToastService) { }
 
   ngOnInit() {
+    this.cookieService.delete('USER_INFO')
   }
 
   onSubmit(data: AuthRequest) {

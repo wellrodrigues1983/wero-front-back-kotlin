@@ -1,44 +1,14 @@
-<!-- <div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-header bg-primary text-white text-center">
-          <h4>Login</h4>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <label for="username" class="form-label">Usuário:</label>
-            <input type="text" id="username" class="form-control"  formControlName="login" />
-
-            <div class="form-group">
-              <label for="password" class="form-label">Senha:</label>
-              <input type="password" id="password" class="form-control" formControlName="passwd">
-
-            </div>
-            <br><br>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary">
-                Entrar
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="login-conteiner">
   <mat-card class="login-conteiner">
     <mat-card-title class="login-title">Login</mat-card-title>
     <mat-card-content >
       <form class="formulario" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="full-width">
+        <mat-form-field appearance="outline" >
           <mat-label>Usuário</mat-label>
           <input matInput formControlName="login" type="email" placeholder="Email">
         </mat-form-field>
 
-        <mat-form-field appearance="outline" class="full-width">
+        <mat-form-field appearance="outline" >
           <mat-label>Senha</mat-label>
           <input matInput formControlName="passwd" type="password" placeholder="Senha">
         </mat-form-field>
