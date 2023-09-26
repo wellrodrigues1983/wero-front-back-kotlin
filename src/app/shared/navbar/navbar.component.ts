@@ -20,7 +20,8 @@ export class NavbarComponent implements OnInit {
 
   logoff(){
     this.cookieService.delete("USER_INFO")
-    this.router.navigate([''])
+    /* this.router.navigate(['']) */
+    window.location.reload()
     this.toast.success({detail:"SUCESSO",summary:'Logoff efetuado com sucesso!',duration:3000})
   }
 
