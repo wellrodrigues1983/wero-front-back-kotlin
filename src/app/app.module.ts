@@ -30,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 import { MatPaginatorIntlPtBr } from './_utils/paginator-ptbr-i8n';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatAutocompleteModule,
     MatTableModule,
     MatPaginatorModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatRadioModule
   ],
   providers: [BsModalService,
   {

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Page } from 'src/app/model/interfaces/Page';
 import { User } from 'src/app/model/interfaces/User';
 import { AdministracaoService } from '../../administracao.service';
@@ -10,11 +10,15 @@ import { AdministracaoService } from '../../administracao.service';
 })
 export class ListarUsuarioComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'login', 'roles'];
+  displayedColumns: string[] = ['id', 'login', 'roles', 'ativo', 'editar'];
 
   constructor(private service: AdministracaoService) { }
 
   page!: Page<User>
+
+  @Input() typeScreen: any;
+
+  @Output() screenEvent = new EventEmitter<boolean>();
 
 
   ngOnInit() {
@@ -35,6 +39,10 @@ export class ListarUsuarioComponent implements OnInit {
       this.page = data
     })
 
+  }
+
+  changeScreen(element: any){
+    this.screenEvent.emit(element)
   }
 
 
