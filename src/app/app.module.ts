@@ -14,23 +14,13 @@ import { NgToastModule } from 'ng-angular-popup';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
 import { AdministracaoModule } from './view/administracao/administracao.module';
 import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
-import { MatTableModule } from '@angular/material/table';
-import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatPaginatorIntlPtBr } from './_utils/paginator-ptbr-i8n';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatRadioModule} from '@angular/material/radio';
+import { MaterialModule } from './shared/material-shared/material/material.module';
 
 
 @NgModule({
@@ -49,33 +39,21 @@ import {MatRadioModule} from '@angular/material/radio';
     NgToastModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
     AdministracaoModule,
     RouterModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatAutocompleteModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatProgressSpinnerModule,
-    MatRadioModule
+    MaterialModule
   ],
   providers: [BsModalService,
-  {
-    provide:HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  },
-  {
-    provide: MatPaginatorIntl, useClass: MatPaginatorIntlPtBr
-  }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: MatPaginatorIntl, useClass: MatPaginatorIntlPtBr
+    }
 
-],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
