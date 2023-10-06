@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CadastrarUsuarioComponent } from './gerenciar-usuarios/cadastrar-usuario/cadastrar-usuario.component';
 import { AdministracaoService } from './administracao.service';
 import { AdministracaoRoutes } from './administracao.routing';
-import { EditarUsuarioComponent } from './gerenciar-usuarios/editar-usuario/editar-usuario.component';
 import { ListarUsuarioComponent } from './gerenciar-usuarios/listar-usuario/listar-usuario.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +21,6 @@ import { MaterialModule } from 'src/app/shared/material-shared/material/material
   ],
   declarations: [
     CadastrarUsuarioComponent,
-    EditarUsuarioComponent,
     ListarUsuarioComponent,
     GerenciarUsuariosComponent
   ],

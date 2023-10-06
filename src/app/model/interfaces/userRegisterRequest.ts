@@ -3,5 +3,5 @@ export interface UserRegisterRequest {
   login: string;
   passwd: string;
   roles: string;
-  enable: string;
+  isEnabled: string;
 }

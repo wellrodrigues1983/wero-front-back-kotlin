@@ -34,11 +34,15 @@
           </select>
         </mat-form-field>
 
-
-          <mat-radio-group aria-label="Selecione a opção" formControlName="enable">
-            <mat-radio-button value="true" [checked]="true">Ativo</mat-radio-button>
-            <mat-radio-button value="false">Inativo</mat-radio-button>
-          </mat-radio-group>
+        <mat-radio-group
+          aria-label="Selecione a opção"
+          formControlName="isEnabled"
+        >
+          <mat-radio-button value="true" [checked]="true"
+            >Ativo</mat-radio-button
+          >
+          <mat-radio-button value="false">Inativo</mat-radio-button>
+        </mat-radio-group>
 
         <button class="btn btn-primary" type="submit">Cadastrar</button>
       </form>
@@ -49,7 +53,7 @@
     <mat-card *ngIf="objEdit">
       <mat-card-title>Editar Usuário</mat-card-title>
       <mat-card-content class="matCardContent">
-        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="userForm" (ngSubmit)="onUpdate()">
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Login</mat-label>
             <input
@@ -82,12 +86,19 @@
             </select>
           </mat-form-field>
 
-          <mat-radio-group aria-label="Selecione a opção" formControlName="enable">
-            <mat-radio-button value="true" >Ativo</mat-radio-button>
-            <mat-radio-button value="false">Inativo</mat-radio-button>
+          <mat-radio-group
+            aria-label="Selecione a opção"
+            formControlName="isEnabled"
+            [(ngModel)]="isEnabledRadio"
+          >
+            <mat-radio-button [value]="true">Ativo</mat-radio-button>
+            <mat-radio-button [value]="false">Inativo</mat-radio-button>
           </mat-radio-group>
 
           <button class="btn btn-primary" type="submit">Salvar</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">
+            Cancelar
+          </button>
         </form>
       </mat-card-content>
     </mat-card>
