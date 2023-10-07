@@ -27,6 +27,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 50%;
 }
 
+.full-width40 {
+  width: 40%;
+}
+
+.full-width30 {
+  width: 30%;
+}
+
+.full-width25 {
+  width: 25%;
+}
+
+.full-width60 {
+  width: 60%;
+}
+
+.mgRight10{
+  margin-right: 10px;
+}
+
 .matCardContent button{
   margin-left: 50px;
 }
@@ -63,5 +83,7 @@ mat-card-title{
   align-items: center;
   justify-content: center;
 }
+
+
 
 

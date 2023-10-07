@@ -21,13 +21,15 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatPaginatorIntlPtBr } from './_utils/paginator-ptbr-i8n';
 import { MaterialModule } from './shared/material-shared/material/material.module';
+import { FinanceiroModule } from './view/financeiro/financeiro.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,9 @@ import { MaterialModule } from './shared/material-shared/material/material.modul
     ReactiveFormsModule,
     AdministracaoModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    FinanceiroModule
+
   ],
   providers: [BsModalService,
     {

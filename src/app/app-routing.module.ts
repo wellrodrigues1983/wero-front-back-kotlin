@@ -18,24 +18,12 @@ const routes: Routes = [
  m.AdministracaoModule),
     canActivate: [AuthGuard]
   },
- /*  {
-    path: 'administracao/usuario-cadastro',
-    loadChildren: () => import('./view/administracao/administracao.module').then((m) =>
- m.AdministracaoModule),
-    canActivate: [AuthGuard]
-  },
   {
-    path: 'administracao/usuario-editar',
-    loadChildren: () => import('./view/administracao/administracao.module').then((m) =>
- m.AdministracaoModule),
+    path: "financeiro",
+    loadChildren: () => import('./view/financeiro/financeiro.module').then((m) => m.FinanceiroModule),
     canActivate: [AuthGuard]
-  },
-  {
-    path: 'administracao/usuario-listar',
-    loadChildren: () => import('./view/administracao/administracao.module').then((m) =>
- m.AdministracaoModule),
-    canActivate: [AuthGuard]
-  }, */
+  }
+
 
 ];
 
