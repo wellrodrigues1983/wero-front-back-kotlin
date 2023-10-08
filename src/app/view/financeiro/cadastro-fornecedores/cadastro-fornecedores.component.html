@@ -29,7 +29,7 @@
         </mat-form-field>
 
         <!--Inscrição Estadual-->
-        <mat-form-field appearance="outline" class="full-width40 mgRight10 ">
+        <mat-form-field appearance="outline" class="full-width30 mgRight10 ">
           <mat-label>Inscrição Estadual</mat-label>
           <input
             matInput
@@ -40,12 +40,23 @@
         </mat-form-field>
 
         <!--Inscrição Municipal-->
-        <mat-form-field appearance="outline" class="full-width40 ">
+        <mat-form-field appearance="outline" class="full-width30 mgRight10 ">
           <mat-label>Inscrição Municipal</mat-label>
           <input
             matInput
             formControlName="inscMunicipal"
             placeholder="Digite a inscrição municipal"
+            autocomplete="off"
+          />
+        </mat-form-field>
+
+        <!-- email -->
+        <mat-form-field appearance="outline" class="full-width30 uppercase">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            placeholder="Digite o email"
             autocomplete="off"
           />
         </mat-form-field>
@@ -69,9 +80,9 @@
             formControlName="contato"
             placeholder="Digite o nome do contato"
             autocomplete="off"
-            appUpperCase
           />
         </mat-form-field>
+
 
         <!--Cep-->
         <mat-form-field appearance="outline" class="full-width30 mgRight10 ">

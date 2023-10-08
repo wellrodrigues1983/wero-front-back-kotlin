@@ -1,8 +1,8 @@
-import { UpperCaseDirective } from 'src/app/_utils/directives/upperCase.directive';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FinanceiroService } from '../financeiro.service';
-import { UpperCasePipe } from '@angular/common';
+import { Fornecedores } from 'src/app/model/interfaces/Fornecedores';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-cadastro-fornecedores',
@@ -13,11 +13,7 @@ export class CadastroFornecedoresComponent implements OnInit {
 
   cadastroForm!: FormGroup;
 
-  /* cnpjCpfMask: TextMaskConfig = { mask: [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/] };
-  telefoneMask: TextMaskConfig = { mask: ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/] };
-  cepMask: TextMaskConfig = { mask: [/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/] }; */
-
-  constructor(private fb: FormBuilder, private service: FinanceiroService) {
+  constructor(private fb: FormBuilder, private service: FinanceiroService, private toast: NgToastService) {
 
   }
 
@@ -48,6 +44,25 @@ export class CadastroFornecedoresComponent implements OnInit {
 
   onSubmit() {
 
+    const data = this.cadastroForm.value as Fornecedores
+
+    if (data) {
+      this.service.saveFornecedores(data).subscribe({
+        next: (response) => {
+          console.log(response)
+          this.toast.success({ detail: "SUCESSO", summary: 'Fornecedor cadastrado com sucesso!', duration: 3000 })
+          this.cadastroForm.reset()
+        },
+        error: (err) => {
+          if (err.status === 400) {
+            this.toast.success({ detail: "ERRO", summary: 'Fornecedor já cadastrado', duration: 3000 })
+          } else {
+            this.toast.success({ detail: "ERRO", summary: 'Erro ao efetuar o cadastro', duration: 3000 })
+          }
+
+        }
+      })
+    }
   }
 
   onCepChange() {
@@ -67,11 +82,11 @@ export class CadastroFornecedoresComponent implements OnInit {
     }
   }
 
-  onCnpjChange(){
+  onCnpjChange() {
 
     const cnpj = this.cadastroForm.get('cpfCnpj')?.value
 
-    if(cnpj && cnpj.length === 14 ){
+    if (cnpj && cnpj.length === 14) {
       this.service.getCnpjInfo(cnpj).subscribe(data => {
         this.cadastroForm.patchValue({
           nomeRazaoSocial: data.razao_social,
